@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Customize Treesitter
 
 ---@type LazySpec
@@ -10,7 +8,29 @@ return {
     opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
       "lua",
       "vim",
-      -- add more arguments for adding more treesitter parsers
+      "html",
+      "css",
+      "scss",
+      "javascript",
+      "typescript",
+      "tsx",
+      "c",
+      "markdown",
+      "markdown_inline",
+      "rust",
+      "sql",
+      "dockerfile",
+      "dot",
+      "gitignore",
+      "graphql",
+      "jsdoc",
+      "json",
+      "php",
+      "phpdoc",
+      "toml",
+      "twig",
+      "yaml",
+      "embedded_template",
     })
   end,
 }
