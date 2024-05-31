@@ -8,6 +8,18 @@ return {
   "AstroNvim/astrolsp",
   ---@type AstroLSPOpts
   opts = {
+    settings = {
+      java = {
+        configuration = {
+          runtimes = {
+            {
+              name = "JavaSE-18",
+              path = "/usr/lib/jvm/java-18-openjdk-amd64/",
+            },
+          },
+        },
+      },
+    },
     -- Configuration table of features provided by AstroLSP
     features = {
       autoformat = true, -- enable or disable auto formatting on start
