@@ -16,6 +16,10 @@ return {
               name = "JavaSE-18",
               path = "/usr/lib/jvm/java-18-openjdk-amd64/",
             },
+            {
+              name = "JavaSE-17",
+              path = "/usr/lib/jvm/java-17-openjdk-amd64/",
+            },
           },
         },
       },

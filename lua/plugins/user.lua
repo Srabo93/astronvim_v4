@@ -12,6 +12,7 @@ return {
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
   },
+  { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
