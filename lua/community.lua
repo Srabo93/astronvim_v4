@@ -19,5 +19,4 @@ return {
   { import = "astrocommunity.pack.xml" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.laravel" },
-  { import = "astrocommunity.pack.sql" },
 }
