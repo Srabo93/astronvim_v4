@@ -14,4 +14,10 @@ return {
   { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.xml" },
+  { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.laravel" },
+  { import = "astrocommunity.pack.sql" },
 }
