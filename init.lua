@@ -14,13 +14,5 @@ if not pcall(require, "lazy") then
   vim.fn.getchar()
   vim.cmd.quit()
 end
-
--- in my settings
--- Filetypes --
-vim.filetype.add {
-  pattern = {
-    [".*%.blade%.php"] = "blade",
-  },
-}
 require "lazy_setup"
 require "polish"
