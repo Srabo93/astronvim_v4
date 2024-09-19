@@ -11,7 +11,7 @@ return {
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.tailwindcss" },
-  { import = "astrocommunity.pack.php" },
+  -- { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.docker" },
