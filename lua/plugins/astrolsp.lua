@@ -48,6 +48,7 @@ return {
         "lua_ls",
         "tsserver",
         "jsonls",
+        "phpactor",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
