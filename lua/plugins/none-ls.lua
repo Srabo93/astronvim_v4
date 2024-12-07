@@ -15,6 +15,7 @@ return {
       null_ls.builtins.formatting.prettierd,
       null_ls.builtins.formatting.phpcsfixer,
       null_ls.builtins.formatting.sqlformat,
+      null_ls.builtins.formatting.pint,
       null_ls.builtins.diagnostics.twigcs,
     }
     return config

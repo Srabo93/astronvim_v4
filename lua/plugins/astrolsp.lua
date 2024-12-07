@@ -34,10 +34,12 @@ return {
         "tsserver",
         "jsonls",
         "phpactor",
+        "volar",
       },
       timeout_ms = 1000, -- default format timeout
       filter = function(client) -- fully override the default formatting function
         if vim.bo.filetype == "php" then return client.name == "intelephense" end
+        return true
       end,
     },
     -- enable servers that you already have installed without mason
@@ -48,10 +50,14 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-      intelephense = {
-        init_options = {
-          licenceKey = ,
+      eslint = {
+        filetypes = { "vue", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+        settings = {
+          workingDirectory = { mode = "auto" },
         },
+      },
+      intelephense = {
+        init_options = {},
         settings = {
           intelephense = {
             files = {
@@ -72,79 +78,6 @@ return {
             diagnostics = {
               enable = true,
             },
-            stubs = {
-              "apache",
-              "bcmath",
-              "bz2",
-              "calendar",
-              "com_dotnet",
-              "Core",
-              "ctype",
-              "curl",
-              "date",
-              "dba",
-              "dom",
-              "enchant",
-              "exif",
-              "FFI",
-              "fileinfo",
-              "filter",
-              "fpm",
-              "ftp",
-              "gd",
-              "gettext",
-              "gmp",
-              "hash",
-              "iconv",
-              "imap",
-              "intl",
-              "json",
-              "ldap",
-              "libxml",
-              "mbstring",
-              "meta",
-              "mysqli",
-              "oci8",
-              "odbc",
-              "openssl",
-              "pcntl",
-              "pcre",
-              "PDO",
-              "pdo_ibm",
-              "pdo_mysql",
-              "pdo_pgsql",
-              "pdo_sqlite",
-              "pgsql",
-              "Phar",
-              "posix",
-              "pspell",
-              "readline",
-              "Reflection",
-              "session",
-              "shmop",
-              "SimpleXML",
-              "snmp",
-              "soap",
-              "sockets",
-              "sodium",
-              "SPL",
-              "sqlite3",
-              "standard",
-              "superglobals",
-              "sysvmsg",
-              "sysvsem",
-              "sysvshm",
-              "tidy",
-              "tokenizer",
-              "xml",
-              "xmlreader",
-              "xmlrpc",
-              "xmlwriter",
-              "xsl",
-              "Zend OPcache",
-              "zip",
-              "zlib",
-            },
           },
         },
       },
@@ -156,12 +89,13 @@ return {
 
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
-      phpactor = false,
+      -- phpactor = false,
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
       -- first key is the `augroup` to add the auto commands to (:h augroup)
+      eslint_fix_on_save = false,
       lsp_document_highlight = {
         -- Optional condition to create/delete auto command group
         -- can either be a string of a client capability or a function of `fun(client, bufnr): boolean`
@@ -187,7 +121,7 @@ return {
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
-        gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
+        -- gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
         -- gD = {
         --   function() vim.lsp.buf.declaration() end,
